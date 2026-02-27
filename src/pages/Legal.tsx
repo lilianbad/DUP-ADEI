@@ -1,26 +1,53 @@
-import { Shield, FileText, CheckCircle, Award } from "lucide-react";
+import { Shield, FileText, CheckCircle, Award, Building2, BookOpen, Stamp } from "lucide-react";
 
-const docs = [
+const legalDocs = [
   {
     icon: Shield,
     title: "Personnalité Juridique",
-    ref: "Arrêté N° 16/CAB/ME/MIN/J&GS/2017",
+    ref: "Arrêté Ministériel N° 16/CAB/ME/MIN/J&GS/2017",
     date: "26 avril 2017",
+    extra: "Journal Officiel N° 14 du 15 juillet 2017, pages 3, 89 et 90",
     desc: "L'ADEI est reconnue comme ONG avec personnalité juridique en RDC par le Ministère de la Justice et Garde des Sceaux.",
   },
   {
+    icon: Building2,
+    title: "Agrément Ministère de l'Agriculture",
+    ref: "Arrêté Ministériel N° 79/CAB/MIN/AGRI/MKS/MKK/2022",
+    date: "01 avril 2022",
+    extra: null,
+    desc: "Agrément officiel du Ministère de l'Agriculture, Pêche et Élevage pour les interventions en développement agricole.",
+  },
+  {
+    icon: Award,
+    title: "Agrément Ministère de l'Environnement",
+    ref: "Avis Favorable N° 0152/CAB/MIN/MEDD/01/00/AKK/2017",
+    date: "2017",
+    extra: "Certificat d'Enregistrement N° 13/CJ/SG/MEDD/017",
+    desc: "Avis favorable et certificat d'enregistrement du Ministère de l'Environnement et Développement Durable.",
+  },
+  {
+    icon: BookOpen,
+    title: "Enregistrement Ministère du Plan",
+    ref: "Certificat N° 1341/PL/DCRE/23",
+    date: "2023",
+    extra: null,
+    desc: "Enregistrement officiel auprès du Ministère du Plan, attestant la conformité institutionnelle de l'ADEI.",
+  },
+  {
     icon: FileText,
-    title: "Enregistrement Fiscal",
-    ref: "Numéro d'impôt valide",
+    title: "Enregistrement Fiscal (DGI)",
+    ref: "N° Impôt : A1803902M",
     date: "En vigueur",
-    desc: "L'ADEI est enregistrée auprès des services fiscaux de la RDC et dispose d'un numéro d'impôt valide, garantissant la conformité fiscale.",
+    extra: "ID National : 1-825-N30050D | Import/Export : PM/PP/0022/AV-18/I000084KC/OG",
+    desc: "L'ADEI est enregistrée auprès de la Direction Générale des Impôts avec numéro d'impôt, identification nationale et agrément import/export.",
   },
   {
     icon: CheckCircle,
-    title: "Enregistrement CNSS",
-    ref: "Caisse Nationale de Sécurité Sociale",
+    title: "Sécurité Sociale (CNSS)",
+    ref: "N° CNSS : 130019460",
     date: "En vigueur",
-    desc: "L'organisation est enregistrée auprès de la CNSS pour la protection sociale de ses employés — preuve d'une gestion responsable.",
+    extra: "Statuts et Règlement intérieur notariés",
+    desc: "L'organisation est enregistrée auprès de la Caisse Nationale de Sécurité Sociale pour la protection sociale de ses employés.",
   },
 ];
 
@@ -31,31 +58,28 @@ const Legal = () => (
         <p className="text-sm uppercase tracking-widest text-accent font-semibold mb-2">Confiance & Transparence</p>
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">Légalité & Transparence</h1>
         <p className="text-muted-foreground text-lg">
-          L'ADEI dispose de <strong className="text-foreground">3 enregistrements officiels</strong> garantissant sa conformité légale totale envers ses partenaires et donateurs.
+          L'ADEI dispose de <strong className="text-foreground">6 enregistrements et agréments officiels</strong> délivrés par les autorités congolaises, garantissant une conformité légale totale.
         </p>
       </div>
     </section>
 
-    {/* Trust badges */}
-    <section className="py-12 border-b">
-      <div className="container grid grid-cols-3 gap-6 text-center max-w-3xl">
-        <div>
-          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-            <Award size={22} className="text-primary" />
-          </div>
-          <p className="font-display text-sm font-bold text-foreground">Personnalité juridique</p>
-        </div>
-        <div>
-          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-            <FileText size={22} className="text-primary" />
-          </div>
-          <p className="font-display text-sm font-bold text-foreground">Enregistrement fiscal</p>
-        </div>
-        <div>
-          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-            <CheckCircle size={22} className="text-primary" />
-          </div>
-          <p className="font-display text-sm font-bold text-foreground">CNSS</p>
+    {/* Trust summary */}
+    <section className="py-12 border-b bg-card">
+      <div className="container max-w-4xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+          {[
+            { value: "6", label: "Agréments officiels" },
+            { value: "4", label: "Ministères de tutelle" },
+            { value: "2017", label: "Personnalité juridique" },
+            { value: "2022", label: "Agrément Agriculture" },
+            { value: "J.O. N°14", label: "Publication officielle" },
+            { value: "Notarié", label: "Statuts certifiés" },
+          ].map((s) => (
+            <div key={s.label} className="p-3">
+              <p className="font-display text-xl font-bold text-primary">{s.value}</p>
+              <p className="text-muted-foreground text-xs mt-1">{s.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -63,7 +87,7 @@ const Legal = () => (
     <section className="py-20">
       <div className="container max-w-3xl">
         <div className="grid gap-6">
-          {docs.map((d) => (
+          {legalDocs.map((d) => (
             <div key={d.title} className="bg-card rounded-xl p-8 shadow-sm border flex items-start gap-6">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                 <d.icon size={24} className="text-primary" />
@@ -71,6 +95,9 @@ const Legal = () => (
               <div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-1">{d.title}</h3>
                 <p className="text-primary text-sm font-semibold mb-1">{d.ref} — {d.date}</p>
+                {d.extra && (
+                  <p className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded inline-block mb-2">{d.extra}</p>
+                )}
                 <p className="text-muted-foreground leading-relaxed text-sm">{d.desc}</p>
               </div>
             </div>
@@ -89,8 +116,8 @@ const Legal = () => (
         <div className="bg-card rounded-xl p-8 border shadow-sm">
           <div className="grid sm:grid-cols-3 gap-6 text-center">
             {[
-              { zone: "Kongo Central", detail: "Siège principal" },
-              { zone: "Lukula & Tshela", detail: "Zones rurales" },
+              { zone: "Kongo Central", detail: "Siège — Territoire de Lukula" },
+              { zone: "Lukula & Tshela", detail: "Zones rurales principales" },
               { zone: "Kinshasa", detail: "Bureau de liaison" },
             ].map((z) => (
               <div key={z.zone} className="p-6 rounded-lg bg-muted">
