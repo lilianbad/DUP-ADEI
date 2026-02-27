@@ -9,17 +9,17 @@ const projects = [
     duration: "4 ans",
     budget: "$1,301,453",
     focus: "Agroforesterie",
-    desc: "Projet phare de l'ADEI visant la gestion durable des paysages forestiers dans le Kongo Central. Ce projet a permis la mise en place de systèmes agroforestiers, la formation de centaines d'agriculteurs et la conservation de milliers d'hectares de forêt.",
-    highlights: ["Gestion durable des paysages forestiers", "Formation d'agriculteurs", "Conservation forestière au Kongo Central"],
+    desc: "Projet phare de l'ADEI visant la gestion durable des paysages forestiers dans le Kongo Central. Mise en place de systèmes agroforestiers, formation d'agriculteurs, conservation forestière et reboisement communautaire.",
+    highlights: ["Gestion durable des paysages forestiers", "Reboisement communautaire", "Cartographie participative", "Plans de gestion des ressources naturelles"],
   },
   {
-    title: "Projet Chaîne de Valeur des Produits Forestiers FAO/UE",
+    title: "Projet GCP/408/EC/RAV — Filière Produits Forestiers (FAO/UE)",
     period: "2008 – 2010",
     duration: "2 ans",
     budget: "$225,453",
     focus: "Micro-entreprises forestières",
-    desc: "En partenariat avec la FAO et l'Union Européenne, ce projet a développé des micro-entreprises basées sur les produits forestiers non ligneux, créant des opportunités économiques durables pour les communautés rurales.",
-    highlights: ["Partenariat FAO & Union Européenne", "Micro-entreprises communautaires", "Produits forestiers non ligneux"],
+    desc: "En partenariat avec la FAO et l'Union Européenne, développement de filières de produits forestiers non ligneux (PFNL) sous l'approche Analyse et Développement de Marché (ADM), créant des micro-entreprises communautaires durables.",
+    highlights: ["Partenariat FAO & Union Européenne", "Approche ADM", "Produits forestiers non ligneux", "Micro-entreprises communautaires"],
   },
 ];
 
@@ -30,7 +30,7 @@ const Projects = () => (
         <p className="text-sm uppercase tracking-widest text-accent font-semibold mb-2">Notre Impact</p>
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">Projets & Expérience</h1>
         <p className="text-muted-foreground text-lg">
-          Plus de <strong className="text-foreground">{totalBudget}</strong> investis dans des projets de développement intégré depuis 2007.
+          Plus de <strong className="text-foreground">{totalBudget}</strong> investis dans des projets de développement intégré — 18 ans d'expérience terrain en RDC.
         </p>
       </div>
     </section>
@@ -40,7 +40,7 @@ const Projects = () => (
       <div className="container grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl">
         <div>
           <p className="font-display text-2xl md:text-3xl font-bold text-primary">{totalBudget}</p>
-          <p className="text-muted-foreground text-sm mt-1">Budget total</p>
+          <p className="text-muted-foreground text-sm mt-1">Budget total géré</p>
         </div>
         <div>
           <p className="font-display text-2xl md:text-3xl font-bold text-primary">2</p>
@@ -59,14 +59,11 @@ const Projects = () => (
 
     <section className="py-20">
       <div className="container max-w-4xl">
-        {/* Timeline */}
         <div className="relative">
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-0.5" />
           {projects.map((p, i) => (
             <div key={p.title} className={`relative mb-16 last:mb-0 md:flex ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-              {/* Dot */}
               <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background -translate-x-1/2 top-6 z-10" />
-
               <div className={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
                 <div className="bg-card rounded-xl p-8 shadow-sm border">
                   <h3 className="font-display text-xl font-bold text-foreground mb-4">{p.title}</h3>

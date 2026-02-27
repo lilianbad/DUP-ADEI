@@ -1,25 +1,48 @@
-import { Building2, Globe, Handshake, Award } from "lucide-react";
+import { Building2, Globe, Handshake, Award, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const ministries = [
+  "Agriculture, Pêche et Élevage",
+  "Environnement, Développement Durable et Nouvelle Économie du Climat",
+  "Développement Rural",
+  "Plan",
+  "Affaires Sociales",
+];
 
 const partners = [
   {
     icon: Building2,
-    title: "Ministères Congolais",
-    orgs: ["Ministère de l'Agriculture", "Ministère de l'Environnement", "Ministère du Développement Durable"],
-    desc: "L'ADEI collabore étroitement avec les Ministères congolais pour aligner ses interventions sur les priorités nationales de développement.",
+    title: "Ministères de l'État Congolais",
+    desc: "L'ADEI collabore officiellement avec 5 ministères congolais, attesté par des agréments ministériels (Arrêté N° 79/2022 Agriculture, Certificat N° 13/MEDD/017 Environnement, Certificat N° 1341/Plan/2023).",
   },
   {
     icon: Handshake,
-    title: "Secteur Agricole & Forestier",
-    orgs: ["Institutions agricoles nationales", "Services de vulgarisation"],
-    desc: "Partenariats pour la formation, la recherche et la vulgarisation des techniques agricoles améliorées — incluant le projet PGAPF de $1,301,453.",
+    title: "Réseaux & Consortiums",
+    desc: "L'ADEI est membre de plusieurs réseaux et consortiums œuvrant dans les domaines du développement communautaire, de la gouvernance forestière et de l'agroforesterie en RDC.",
   },
   {
     icon: Globe,
-    title: "Partenaires Internationaux",
-    orgs: ["FAO (Organisation des Nations Unies)", "Union Européenne"],
-    desc: "Collaboration vérifiée avec la FAO et l'UE pour la mise en œuvre du projet Chaîne de Valeur des Produits Forestiers ($225,453, 2008–2010).",
+    title: "FAO & Union Européenne",
+    desc: "Partenariat vérifié avec la FAO et l'UE pour le Projet GCP/408/EC/RAV — Développement de filière produits forestiers non ligneux ($225,453, 2008–2010).",
   },
+  {
+    icon: Briefcase,
+    title: "Partenaires Locaux de Terrain",
+    desc: "Collaboration directe avec les Comités Locaux de Développement (CLD), les Conseils Agricoles Ruraux de Gestion (CARG) et les Concessions Forestières des Communautés Locales (CFCL).",
+  },
+];
+
+const expertise = [
+  "Gouvernance et aménagement des territoires",
+  "Agroforesterie et agro-écologie",
+  "Reboisement communautaire",
+  "Agriculture sans déforestation",
+  "Régénération naturelle assistée",
+  "Gestion durable des forêts",
+  "Conservation des forêts et biodiversité",
+  "Cartographie participative",
+  "Inventaires multi-ressources",
+  "Élaboration de PGRN, PSG et PDL",
 ];
 
 const Partnerships = () => (
@@ -29,19 +52,22 @@ const Partnerships = () => (
         <p className="text-sm uppercase tracking-widest text-accent font-semibold mb-2">Collaboration</p>
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">Nos Partenariats</h1>
         <p className="text-muted-foreground text-lg">
-          L'ADEI a géré plus de <strong className="text-foreground">$1,5 million</strong> en partenariat avec des institutions nationales et internationales.
+          L'ADEI collabore avec <strong className="text-foreground">5 ministères</strong>, des partenaires internationaux (FAO, UE) et de multiples réseaux locaux — plus de <strong className="text-foreground">$1,5 million</strong> de projets gérés conjointement.
         </p>
       </div>
     </section>
 
-    {/* Partner trust badges */}
+    {/* Ministry badges */}
     <section className="py-12 border-b">
-      <div className="container flex flex-wrap justify-center gap-6">
-        {["FAO", "Union Européenne", "Min. Agriculture", "Min. Environnement"].map((p) => (
-          <span key={p} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-            <Award size={14} /> {p}
-          </span>
-        ))}
+      <div className="container max-w-4xl">
+        <p className="text-center text-sm font-semibold text-foreground mb-4">Ministères partenaires officiels</p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {ministries.map((m) => (
+            <span key={m} className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <Award size={12} /> Min. {m}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -55,13 +81,28 @@ const Partnerships = () => (
               </div>
               <div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">{p.title}</h3>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {p.orgs.map((o) => (
-                    <span key={o} className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground font-medium">{o}</span>
-                  ))}
-                </div>
                 <p className="text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Expertise */}
+    <section className="py-20 bg-muted">
+      <div className="container max-w-4xl">
+        <div className="text-center mb-10">
+          <p className="text-sm uppercase tracking-widest text-accent font-semibold mb-2">10 Domaines d'Expertise</p>
+          <h2 className="font-display text-3xl font-bold text-foreground">Expertise Technique Vérifiée</h2>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {expertise.map((e, i) => (
+            <div key={i} className="bg-card rounded-lg px-5 py-3.5 flex items-center gap-3 shadow-sm border">
+              <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center shrink-0">
+                <span className="text-primary-foreground text-xs font-bold">{i + 1}</span>
+              </div>
+              <p className="text-foreground text-sm font-medium">{e}</p>
             </div>
           ))}
         </div>
@@ -76,7 +117,7 @@ const Partnerships = () => (
           Rejoignez la FAO et l'Union Européenne parmi nos partenaires de développement.
         </p>
         <p className="opacity-60 mb-8 text-sm">
-          18+ ans d'expérience — $1,5M+ de projets — 3 provinces en RDC
+          18+ ans d'expérience — $1,5M+ de projets — 5 ministères partenaires — 10 domaines d'expertise
         </p>
         <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-opacity">
           Nous Contacter
