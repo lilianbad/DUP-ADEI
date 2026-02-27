@@ -1,28 +1,12 @@
-import { ShieldCheck, Award, Building2 } from "lucide-react";
 import communityImg from "@/assets/community.jpg";
 
 const objectives = [
-  "Appuyer la promotion de la femme",
-  "Appuyer la promotion et création des PME locales (produits ligneux et non ligneux)",
-  "Renforcer les capacités techniques et organisationnelles des groupes de base",
-  "Appuyer le secteur de la santé : assainissement, eau potable, sensibilisation VIH/SIDA",
-  "Augmenter et améliorer la production agricole et agroforestière",
-  "Améliorer les conditions de vie des communautés de producteurs locaux",
-  "Réhabiliter les infrastructures de base : routes, dalots, ponts, entrepôts",
-  "Reconstituer le capital forestier et promouvoir les pratiques agro-écologiques",
-  "Promouvoir la santé et la nutrition communautaire",
-];
-
-const keyFacts = [
-  { label: "Date de création", value: "22 avril 2007" },
-  { label: "Personnalité juridique", value: "Arrêté N° 16/2017" },
-  { label: "Journal Officiel", value: "N° 14, 15 juillet 2017" },
-  { label: "Budget total projets", value: "$1,526,906" },
-  { label: "Provinces d'intervention", value: "Kongo Central, Kinshasa" },
-  { label: "Coordinateur", value: "NLANDU MBELE Willy" },
-  { label: "Ministères partenaires", value: "5 ministères" },
-  { label: "Agréments officiels", value: "6 enregistrements" },
-  { label: "Domaines d'expertise", value: "10 expertises techniques" },
+  "Autonomisation des femmes et promotion du genre",
+  "Entrepreneuriat local et développement des micro-entreprises",
+  "Agriculture durable et sécurité alimentaire",
+  "Santé communautaire et nutrition",
+  "Protection de l'environnement et gestion des ressources naturelles",
+  "Réhabilitation d'infrastructures communautaires",
 ];
 
 const About = () => (
@@ -33,22 +17,8 @@ const About = () => (
         <p className="text-sm uppercase tracking-widest text-accent font-semibold mb-2">À Propos</p>
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">Qui sommes-nous</h1>
         <p className="text-muted-foreground text-lg leading-relaxed">
-          L'ADEI est une ASBL/ONGD créée le <strong className="text-foreground">22 avril 2007</strong> par une équipe de techniciens engagés dans le développement communautaire, dotée de la personnalité juridique (J.O. N° 14 du 15 juillet 2017). Budget total géré : <strong className="text-foreground">$1,526,906</strong>.
+          L'ADEI est une organisation non gouvernementale de développement fondée en 2007 en République Démocratique du Congo, engagée pour le développement intégré des communautés rurales.
         </p>
-      </div>
-    </section>
-
-    {/* Key Facts */}
-    <section className="py-14 border-b">
-      <div className="container max-w-4xl">
-        <div className="grid grid-cols-3 gap-6">
-          {keyFacts.map((f) => (
-            <div key={f.label} className="text-center p-3">
-              <p className="font-display text-base md:text-lg font-bold text-primary">{f.value}</p>
-              <p className="text-muted-foreground text-xs mt-1">{f.label}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
 
@@ -62,25 +32,14 @@ const About = () => (
           <div className="mb-10">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Notre Mission</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Renforcer les capacités opérationnelles des paysans et faciliter les échanges et analyses des actions de développement endogène — à travers 5 domaines d'intervention et 10 expertises techniques vérifiées.
+              Contribuer au développement durable des communautés rurales congolaises par des interventions participatives dans les domaines de l'agriculture, la santé, l'environnement, l'éducation et les infrastructures.
             </p>
           </div>
-          <div className="mb-10">
+          <div>
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Notre Vision</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Promouvoir un développement durable par une approche concertée, participative et fondée sur un partenariat responsable et constructif dans un environnement vivable.
+              Des communautés rurales autonomes, résilientes et prospères, capables de prendre en charge leur propre développement de manière durable.
             </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-              <ShieldCheck size={14} /> N° Impôt : A1803902M
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-              <Award size={14} /> CNSS : 130019460
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
-              <Building2 size={14} /> ID NAT : 1-825-N30050D
-            </span>
           </div>
         </div>
       </div>
@@ -89,14 +48,14 @@ const About = () => (
     {/* Objectives */}
     <section className="py-20 bg-muted">
       <div className="container max-w-3xl">
-        <h2 className="font-display text-3xl font-bold text-foreground mb-10 text-center">Nos 9 Objectifs Stratégiques</h2>
+        <h2 className="font-display text-3xl font-bold text-foreground mb-10 text-center">Nos Objectifs</h2>
         <div className="grid gap-4">
           {objectives.map((obj, i) => (
             <div key={i} className="bg-card rounded-lg p-5 flex items-start gap-4 shadow-sm">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5">
                 <span className="text-primary-foreground text-sm font-bold">{i + 1}</span>
               </div>
-              <p className="text-foreground font-medium text-sm">{obj}</p>
+              <p className="text-foreground font-medium">{obj}</p>
             </div>
           ))}
         </div>
@@ -108,7 +67,7 @@ const About = () => (
       <div className="container max-w-3xl text-center">
         <h2 className="font-display text-3xl font-bold text-foreground mb-6">Notre Histoire</h2>
         <p className="text-muted-foreground leading-relaxed text-lg">
-          Créée le <strong className="text-foreground">22 avril 2007</strong>, l'ADEI a été officiellement reconnue par l'Arrêté Ministériel N° 16/CAB/ME/MIN/J&GS/2017 du 26 avril 2017, publié au <strong className="text-foreground">Journal Officiel N° 14</strong> du 15 juillet 2017. Depuis plus de <strong className="text-foreground">18 ans</strong>, nous intervenons dans les territoires de <strong className="text-foreground">Lukula, Tshela</strong> et <strong className="text-foreground">Kinshasa</strong>, avec un budget cumulé de <strong className="text-foreground">$1,526,906</strong>, en collaboration avec <strong className="text-foreground">5 ministères</strong> et des partenaires internationaux (FAO, UE).
+          Créée en 2007, l'ADEI a été officiellement reconnue par l'arrêté ministériel N° 16/CAB/ME/MIN/J&GS/2017 du 26 avril 2017. Depuis plus de 18 ans, nous intervenons dans les provinces du Kongo Central et de Kinshasa, aux côtés des communautés les plus vulnérables, pour promouvoir un développement intégré et durable.
         </p>
       </div>
     </section>
