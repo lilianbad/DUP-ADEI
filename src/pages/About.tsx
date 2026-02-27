@@ -1,3 +1,4 @@
+import { ShieldCheck, Award, Building2 } from "lucide-react";
 import communityImg from "@/assets/community.jpg";
 
 const objectives = [
@@ -9,6 +10,15 @@ const objectives = [
   "Réhabilitation d'infrastructures communautaires",
 ];
 
+const keyFacts = [
+  { label: "Fondée en", value: "2007" },
+  { label: "Personnalité juridique", value: "Arrêté N° 16/2017" },
+  { label: "Budget total projets", value: "$1,526,906" },
+  { label: "Provinces d'intervention", value: "3 (Kongo Central, Kinshasa)" },
+  { label: "Domaines d'expertise", value: "5 secteurs stratégiques" },
+  { label: "Coordinateur", value: "NLANDU MBELE Willy" },
+];
+
 const About = () => (
   <div className="pt-20">
     {/* Header */}
@@ -17,8 +27,22 @@ const About = () => (
         <p className="text-sm uppercase tracking-widest text-accent font-semibold mb-2">À Propos</p>
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">Qui sommes-nous</h1>
         <p className="text-muted-foreground text-lg leading-relaxed">
-          L'ADEI est une organisation non gouvernementale de développement fondée en 2007 en République Démocratique du Congo, engagée pour le développement intégré des communautés rurales.
+          L'ADEI est une ONG de développement fondée en 2007 en RDC, dotée de la personnalité juridique par Arrêté Ministériel N° 16/CAB/ME/MIN/J&GS/2017. Plus de <strong className="text-foreground">$1,5 million</strong> investis dans le développement intégré des communautés rurales.
         </p>
+      </div>
+    </section>
+
+    {/* Key Facts */}
+    <section className="py-14 border-b">
+      <div className="container max-w-4xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {keyFacts.map((f) => (
+            <div key={f.label} className="text-center p-4">
+              <p className="font-display text-lg md:text-xl font-bold text-primary">{f.value}</p>
+              <p className="text-muted-foreground text-sm mt-1">{f.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -32,14 +56,25 @@ const About = () => (
           <div className="mb-10">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Notre Mission</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Contribuer au développement durable des communautés rurales congolaises par des interventions participatives dans les domaines de l'agriculture, la santé, l'environnement, l'éducation et les infrastructures.
+              Contribuer au développement durable des communautés rurales congolaises par des interventions participatives dans 5 domaines stratégiques : agriculture, santé, environnement, éducation et infrastructures.
             </p>
           </div>
-          <div>
+          <div className="mb-10">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Notre Vision</h2>
             <p className="text-muted-foreground leading-relaxed">
               Des communautés rurales autonomes, résilientes et prospères, capables de prendre en charge leur propre développement de manière durable.
             </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <ShieldCheck size={14} /> Enregistrée fiscalement
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <Award size={14} /> CNSS
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <Building2 size={14} /> Partenaire FAO & UE
+            </span>
           </div>
         </div>
       </div>
@@ -48,7 +83,7 @@ const About = () => (
     {/* Objectives */}
     <section className="py-20 bg-muted">
       <div className="container max-w-3xl">
-        <h2 className="font-display text-3xl font-bold text-foreground mb-10 text-center">Nos Objectifs</h2>
+        <h2 className="font-display text-3xl font-bold text-foreground mb-10 text-center">Nos 6 Objectifs Stratégiques</h2>
         <div className="grid gap-4">
           {objectives.map((obj, i) => (
             <div key={i} className="bg-card rounded-lg p-5 flex items-start gap-4 shadow-sm">
@@ -67,7 +102,7 @@ const About = () => (
       <div className="container max-w-3xl text-center">
         <h2 className="font-display text-3xl font-bold text-foreground mb-6">Notre Histoire</h2>
         <p className="text-muted-foreground leading-relaxed text-lg">
-          Créée en 2007, l'ADEI a été officiellement reconnue par l'arrêté ministériel N° 16/CAB/ME/MIN/J&GS/2017 du 26 avril 2017. Depuis plus de 18 ans, nous intervenons dans les provinces du Kongo Central et de Kinshasa, aux côtés des communautés les plus vulnérables, pour promouvoir un développement intégré et durable.
+          Créée en <strong className="text-foreground">2007</strong>, l'ADEI a été officiellement reconnue par l'Arrêté Ministériel N° 16/CAB/ME/MIN/J&GS/2017 du 26 avril 2017. Depuis plus de <strong className="text-foreground">18 ans</strong>, nous intervenons dans les provinces du <strong className="text-foreground">Kongo Central</strong> et de <strong className="text-foreground">Kinshasa</strong>, avec un budget cumulé de plus de <strong className="text-foreground">$1,5 million</strong>, aux côtés des communautés les plus vulnérables.
         </p>
       </div>
     </section>
